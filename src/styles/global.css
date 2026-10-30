@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Design tokens (all text colours pass WCAG AA on their backgrounds) */
+@theme {
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-line: #e2e8f0;
+  --color-ground: #f4f6f9;
+  --color-card: #ffffff;
+  --color-ok: #047857;
+  --color-ok-bg: #d1fae5;
+  --color-bad: #b91c1c;
+  --color-bad-bg: #fef2f2;
+  --color-warn: #b45309;
+  --color-accent: #1d4ed8;
+  --color-accent-bg: #dbeafe;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Telugu", "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html { background: var(--color-ground); color: var(--color-ink); }
+body { margin: 0; font-family: var(--font-sans); }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; z-index: 10; background: #fff; padding: 8px 12px; border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
