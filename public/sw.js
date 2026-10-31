@@ -1,8 +1,8 @@
 // Repo Sentinel service worker: works offline with the last data it saw.
 // The data file is encrypted, so keeping a copy on the device reveals nothing.
-const VERSION = "sentinel-v1";
+const VERSION = "sentinel-v2";
 const SCOPE = self.registration.scope; // e.g. https://user.github.io/repo-sentinel/
-const SHELL = [SCOPE, `${SCOPE}manifest.webmanifest`, `${SCOPE}icons/icon.svg`, `${SCOPE}icons/icon-192.png`];
+const SHELL = [SCOPE, `${SCOPE}manifest.webmanifest`, `${SCOPE}icons/icon.svg`, `${SCOPE}icons/icon-192.png`, `${SCOPE}icons/icon-512.png`];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => Promise.all(SHELL.map((u) => c.add(u).catch(() => {})))));

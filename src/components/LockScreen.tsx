@@ -1,5 +1,5 @@
 import { useId, useState, type FormEvent } from "react";
-import { ShieldIcon } from "./icons";
+import { BrandIcon } from "./icons";
 
 export default function LockScreen({ onUnlock }: { onUnlock: (passphrase: string, remember: boolean) => Promise<void> }) {
   const [pass, setPass] = useState("");
@@ -25,9 +25,7 @@ export default function LockScreen({ onUnlock }: { onUnlock: (passphrase: string
     <main id="main" className="flex min-h-screen items-center justify-center p-4">
       <form onSubmit={submit} className="w-full max-w-md rounded-2xl border border-line bg-card p-8 shadow-sm" aria-describedby={error ? errId : undefined}>
         <div className="mb-6 flex items-center gap-3">
-          <span className="grid size-11 place-items-center rounded-xl bg-ink text-emerald-300">
-            <ShieldIcon />
-          </span>
+          <BrandIcon size={44} />
           <div>
             <h1 className="text-xl font-bold">Repo Sentinel</h1>
             <p className="text-sm text-muted">This dashboard is locked.</p>

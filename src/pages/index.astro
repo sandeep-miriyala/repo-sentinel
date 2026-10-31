@@ -17,7 +17,11 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     <meta name="theme-color" content="#0f172a" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
     <link rel="icon" href={`${base}icons/icon.svg`} type="image/svg+xml" />
-    <link rel="apple-touch-icon" href={`${base}icons/icon-192.png`} />
+    <link rel="icon" href={`${base}icons/icon-192.png`} type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href={`${base}icons/icon-180.png`} sizes="180x180" />
+    <meta name="color-scheme" content="light" />
+    <meta name="apple-mobile-web-app-title" content="Sentinel" />
+    <meta name="mobile-web-app-capable" content="yes" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>

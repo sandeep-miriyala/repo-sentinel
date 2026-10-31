@@ -17,6 +17,7 @@
     "@astrojs/react": "^7.1.2",
     "@tanstack/react-query": "^5.105.0",
     "@tanstack/react-table": "^9.3.1",
+    "@yuktishaalaa/yuktai": "^5.3.12",
     "astro": "^7.4.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

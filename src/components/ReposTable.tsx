@@ -2,6 +2,7 @@
 import { createColumnHelper, createSortedRowModel, rowSortingFeature, sortFn_alphanumeric, sortFn_basic, tableFeatures, useTable } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
 import type { RepoRow } from "../lib/types";
+import { ReposIcon } from "./icons";
 
 const features = tableFeatures({
   rowSortingFeature,
@@ -60,7 +61,8 @@ export default function ReposTable({ repos }: { repos: RepoRow[] }) {
   return (
     <section aria-labelledby="repos-h" className="min-w-0 flex-[999_1_560px] rounded-2xl border border-line bg-card p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-        <h2 id="repos-h" className="text-lg font-bold">
+        <h2 id="repos-h" className="flex items-center gap-2 text-lg font-bold">
+          <span className="text-accent"><ReposIcon /></span>
           Repos <span className="text-sm font-normal text-muted">({repos.length})</span>
         </h2>
         <label className="flex items-center gap-2 text-sm text-muted">

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ago, ist, num, siteStatus } from "../lib/format";
 import type { DashboardData } from "../lib/types";
 import AskAI from "./AskAI";
-import { AlertIcon, DownloadIcon, LockIcon, RefreshIcon, ShieldIcon, SparkIcon } from "./icons";
+import { ActivityIcon, AlertIcon, BrandIcon, DownloadIcon, DownloadsIcon, LockIcon, RefreshIcon, SitesIcon, SparkIcon, XerjIcon } from "./icons";
 import ReposTable from "./ReposTable";
 import Sparkline from "./Sparkline";
 
@@ -41,9 +41,7 @@ export default function Dashboard({ data, onLock, onRefresh, refreshing }: { dat
       <header className="bg-ink text-slate-50">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <span className="text-emerald-300">
-              <ShieldIcon />
-            </span>
+            <BrandIcon size={40} />
             <div>
               <h1 className="text-lg font-bold tracking-tight">Repo Sentinel</h1>
               <p className="text-sm text-slate-300">
@@ -113,7 +111,8 @@ export default function Dashboard({ data, onLock, onRefresh, refreshing }: { dat
         </section>
 
         <section aria-labelledby="sites-h" className={card}>
-          <h2 id="sites-h" className="mb-3 text-lg font-bold">
+          <h2 id="sites-h" className="mb-3 flex items-center gap-2 text-lg font-bold">
+            <span className="text-accent"><SitesIcon /></span>
             Websites
           </h2>
           <div className="overflow-x-auto">
@@ -162,7 +161,8 @@ export default function Dashboard({ data, onLock, onRefresh, refreshing }: { dat
 
           <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-6">
             <section aria-labelledby="dl-h" className={`${card} flex flex-col gap-4`}>
-              <h2 id="dl-h" className="text-lg font-bold">
+              <h2 id="dl-h" className="flex items-center gap-2 text-lg font-bold">
+                <span className="text-accent"><DownloadsIcon /></span>
                 Downloads / week
               </h2>
               {(["npm", "pypi"] as const).flatMap((kind) =>
@@ -181,7 +181,8 @@ export default function Dashboard({ data, onLock, onRefresh, refreshing }: { dat
 
             {data.xerj && (
               <section aria-labelledby="xerj-h" className={`${card} flex flex-col gap-2`}>
-                <h2 id="xerj-h" className="text-lg font-bold">
+                <h2 id="xerj-h" className="flex items-center gap-2 text-lg font-bold">
+                  <span className="text-accent"><XerjIcon /></span>
                   XERJ Corpus Hub
                 </h2>
                 {data.xerj.ok ? (
@@ -208,7 +209,8 @@ export default function Dashboard({ data, onLock, onRefresh, refreshing }: { dat
 
         {data.security.length > 0 && (
           <section aria-labelledby="sec-h" className={card}>
-            <h2 id="sec-h" className="mb-3 text-lg font-bold text-bad">
+            <h2 id="sec-h" className="mb-3 flex items-center gap-2 text-lg font-bold text-bad">
+              <AlertIcon />
               Security: action needed
             </h2>
             <ul className="flex flex-col gap-2">
@@ -228,7 +230,8 @@ export default function Dashboard({ data, onLock, onRefresh, refreshing }: { dat
         )}
 
         <section aria-labelledby="act-h" className={card}>
-          <h2 id="act-h" className="mb-3 text-lg font-bold">
+          <h2 id="act-h" className="mb-3 flex items-center gap-2 text-lg font-bold">
+            <span className="text-accent"><ActivityIcon /></span>
             Recent activity <span className="text-sm font-normal text-muted">(7 days)</span>
           </h2>
           {data.changes.length === 0 ? (
