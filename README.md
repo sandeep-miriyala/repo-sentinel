@@ -1,7 +1,7 @@
 # Repo Sentinel
 
 A private dashboard for my GitHub repos and websites, hosted free on GitHub Pages:
-**https://sandeepmiriyala03.github.io/repo-sentinel/**
+**https://sandeep-miriyala.github.io/repo-sentinel/**
 
 The page is public, but the data is not. A separate private repo, [repo-monitor](#how-it-works), collects the numbers every hour, encrypts them with AES-256-GCM and publishes one file, `public/data/data.enc`. The browser asks for a passphrase and decrypts it locally. Without the passphrase, the file is unreadable noise.
 
